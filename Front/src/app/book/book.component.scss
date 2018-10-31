@@ -1,0 +1,31 @@
+table {
+    width: 100%;
+}
+
+td,
+th,
+th.mat-header-cell {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background: #CCC
+}
+
+tr:nth-child(odd) {
+    background: #FFF
+}
+
+th {
+    font-weight: bold
+}
+
+tr {
+    border-style: outset
+}
+
+button.mat-flat-button a.mat-flat-button {
+    font-size: 20px;
+    width: 180px;
+    height: 45px;
+}
