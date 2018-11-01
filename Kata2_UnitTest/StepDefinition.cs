@@ -23,7 +23,7 @@ namespace BookShopping_UnitTest
         [When(@"I put a (.*) in my basket")]
         public void WhenIPutAInMyBasket(int numberOfBook)
         {
-            Book book = new Book("test",8);
+            Book book = new Book("test",8, Guid.NewGuid());
             FinalPrice = numberOfBook * book.unitPrice;
         }
 

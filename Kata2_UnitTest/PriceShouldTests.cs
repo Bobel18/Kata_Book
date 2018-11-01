@@ -27,7 +27,7 @@ namespace BookShopping_UnitTest
         public void MultipleOfEight(int numberOfBook, int expected)
         {
             var basket = new Basket();
-            var book = new Book("test",8);
+            var book = new Book("test",8, Guid.NewGuid());
             for (int i = 0; i < numberOfBook; i++)
             {
                 basket.AddBook(book);

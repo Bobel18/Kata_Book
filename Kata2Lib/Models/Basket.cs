@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BookShoppingLib.DAL;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,25 +8,24 @@ namespace BookShoppingLib
 
     public class Basket
     {
+        InMemoryBookShoppingRepository _repo = new InMemoryBookShoppingRepository();
         
-      // I had book in the basket 
-    public void AddBook(Book book)
+        public void AddBook(Book book)
         {
-            booksBasket.Add(book);
+            _repo.AddBook(book);
             
         }
 
-        // I store books in basket in a list
-       private List<Book> booksBasket= new List<Book>();
-
-
-        
-       
 
        public int CalculateFinalPrice()
         {
-            Book book = new Book("test", 8);
-            return book.unitPrice * booksBasket.Count;
+            if(_repo.booksBasket.Count !=0)
+            {
+                return _repo.booksBasket[0].unitPrice * _repo.booksBasket.Count;
+            }
+            return 0;
+            
+            
            
         }
     }
